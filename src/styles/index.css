@@ -1,0 +1,481 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, crystal.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, crystal.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, crystal.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, crystal.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, crystal.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 41, crystal.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, crystal.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 58, crystal.scss */
+body {
+  background: #000;
+  text-align: center;
+  font-family: 'VT323', monospace;
+}
+
+/* line 64, crystal.scss */
+h2 {
+  padding: 0.2em 0.2em 0.5em;
+  font-size: 3rem;
+}
+
+/* line 69, crystal.scss */
+button {
+  margin: 0.3em 0 0.6em;
+  padding: 0.1em;
+  background: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: 0.1em solid #000;
+  border-color: inherit;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+/* line 82, crystal.scss */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* line 89, crystal.scss */
+.info {
+  width: 20%;
+  height: 100%;
+  margin: 1em 0.4em;
+  background: #000;
+  color: #f5be33;
+  font-size: 2rem;
+  border: 0.2em solid #f5be33;
+  border-radius: 0.5em;
+}
+
+/* line 100, crystal.scss */
+.info-2 {
+  color: #518cc7;
+  border-color: #518cc7;
+}
+
+/* line 105, crystal.scss */
+.info-3 {
+  color: #195b1b;
+  border-color: #195b1b;
+}
+
+/* line 110, crystal.scss */
+.info-4 {
+  color: #a258a8;
+  border-color: #a258a8;
+}
+
+/* line 115, crystal.scss */
+.info-5 {
+  color: #f8f4eb;
+  border-color: #f8f4eb;
+}
+
+/* line 120, crystal.scss */
+.log {
+  padding: 0.5em 0.2em;
+}
+
+/* line 124, crystal.scss */
+.hp-good {
+  color: green;
+}
+
+/* line 128, crystal.scss */
+.hp-warn {
+  color: yellow;
+}
+
+/* line 132, crystal.scss */
+.hp-danger {
+  color: red;
+}
+
+/* line 138, crystal.scss */
+.modal {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #f8f4eb;
+  font-size: 2rem;
+  border: 0.2em solid #f8f4eb;
+  border-radius: 0.3em;
+}
+/* line 149, crystal.scss */
+.modal h3 {
+  padding: 0.3em;
+  font-size: 3rem;
+}
+
+/* line 155, crystal.scss */
+.defeated {
+  color: red;
+  border-color: red;
+}
+
+/* line 162, crystal.scss */
+.game {
+  width: 80%;
+  margin: 1em;
+}
+
+/* line 167, crystal.scss */
+.hp-bar {
+  position: relative;
+  top: -4px;
+  left: 1px;
+  width: 30px;
+  height: 5px;
+  background: red;
+}
+
+/* line 176, crystal.scss */
+.hp-life {
+  position: relative;
+  height: 5px;
+  background: green;
+}
+
+/* line 182, crystal.scss */
+.row {
+  line-height: 0px;
+}
+
+/* line 186, crystal.scss */
+.tile {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+}
+@media (max-width: 1300px) {
+  /* line 186, crystal.scss */
+  .tile {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 186, crystal.scss */
+  .tile {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+/* line 201, crystal.scss */
+.wall-1 {
+  background: #f5be33;
+  background: url("sprite-map.png") 0 0;
+}
+
+/* line 205, crystal.scss */
+.wall-2 {
+  background: #518cc7;
+  background: url("sprite-map.png") 0 -32px;
+}
+
+/* line 209, crystal.scss */
+.wall-3 {
+  background: #195b1b;
+  background: url("sprite-map.png") 0 -64px;
+}
+
+/* line 213, crystal.scss */
+.wall-4 {
+  background: #a258a8;
+  background: url("sprite-map.png") 0 -96px;
+}
+
+/* line 217, crystal.scss */
+.wall-5 {
+  background: #f8f4eb;
+  background: url("sprite-map.png") 0 -128px;
+}
+
+/* line 223, crystal.scss */
+.floor-1 {
+  background: #f7cd64;
+  background: url("sprite-map.png") -32px 0;
+}
+
+/* line 227, crystal.scss */
+.floor-2 {
+  background: #78a5d3;
+  background: url("sprite-map.png") -32px -32px;
+}
+
+/* line 232, crystal.scss */
+.floor-3 {
+  background: #248327;
+  background: url("sprite-map.png") -32px -64px;
+}
+
+/* line 236, crystal.scss */
+.floor-4 {
+  background: #b57ab9;
+  background: url("sprite-map.png") -32px -96px;
+}
+
+/* line 240, crystal.scss */
+.floor-5 {
+  background: white;
+  background: url("sprite-map.png") -32px -128px;
+}
+
+/* line 246, crystal.scss */
+.player-1 {
+  background: blue;
+  background: url("sprite-map.png") -64px 0;
+}
+
+/* line 254, crystal.scss */
+.player-2 {
+  background: blue;
+  background: url("sprite-map.png") -64px -32px;
+}
+
+/* line 258, crystal.scss */
+.player-3 {
+  background: blue;
+  background: url("sprite-map.png") -64px -64px;
+}
+
+/* line 262, crystal.scss */
+.player-4 {
+  background: blue;
+  background: url("sprite-map.png") -64px -96px;
+}
+
+/* line 266, crystal.scss */
+.player-5 {
+  background: blue;
+  background: url("sprite-map.png") -64px -128px;
+}
+
+/* line 272, crystal.scss */
+.enemy-1 {
+  background: red;
+  background: url("sprite-map.png") -96px 0;
+}
+
+/* line 276, crystal.scss */
+.enemy-2 {
+  background: red;
+  background: url("sprite-map.png") -96px -32px;
+}
+
+/* line 280, crystal.scss */
+.enemy-3 {
+  background: red;
+  background: url("sprite-map.png") -96px -64px;
+}
+
+/* line 284, crystal.scss */
+.enemy-4 {
+  background: red;
+  background: url("sprite-map.png") -96px -96px;
+}
+
+/* line 288, crystal.scss */
+.boss {
+  background: red;
+  background: url("sprite-map.png") -96px -128px;
+}
+
+/* line 293, crystal.scss */
+.chest-1, .chest-3, .chest-4 {
+  background: brown;
+  background: url("sprite-map.png") -128px 0;
+}
+
+/* line 297, crystal.scss */
+.chest-2 {
+  background: brown;
+  background: url("sprite-map.png") -128px -32px;
+}
+
+/* line 303, crystal.scss */
+.hp-1 {
+  background: green;
+  background: url("sprite-map.png") -160px 0;
+}
+
+/* line 307, crystal.scss */
+.hp-2 {
+  background: green;
+  background: url("sprite-map.png") -160px -32px;
+}
+
+/* line 311, crystal.scss */
+.hp-3 {
+  background: green;
+  background: url("sprite-map.png") -160px -64px;
+}
+
+/* line 315, crystal.scss */
+.hp-4 {
+  background: green;
+  background: url("sprite-map.png") -160px -96px;
+}
+
+/* line 319, crystal.scss */
+.hp-5 {
+  background: green;
+  background: url("sprite-map.png") -160px -128px;
+}
+
+/* line 325, crystal.scss */
+.weapon-1 {
+  background: orange;
+  background: url("sprite-map.png") -192px 0;
+}
+
+/* line 329, crystal.scss */
+.weapon-2 {
+  background: orange;
+  background: url("sprite-map.png") -192px -32px;
+}
+
+/* line 333, crystal.scss */
+.weapon-3 {
+  background: orange;
+  background: url("sprite-map.png") -192px -64px;
+}
+
+/* line 337, crystal.scss */
+.weapon-4 {
+  background: orange;
+  background: url("sprite-map.png") -192px -96px;
+}
+
+/* line 343, crystal.scss */
+.armour-1 {
+  background: #bbb;
+  background: url("sprite-map.png") -224px 0;
+}
+
+/* line 347, crystal.scss */
+.armour-2 {
+  background: #bbb;
+  background: url("sprite-map.png") -224px -32px;
+}
+
+/* line 351, crystal.scss */
+.armour-3 {
+  background: #bbb;
+  background: url("sprite-map.png") -224px -64px;
+}
+
+/* line 355, crystal.scss */
+.armour-4 {
+  background: #bbb;
+  background: url("sprite-map.png") -224px -96px;
+}
+
+/* line 361, crystal.scss */
+.crystal-1 {
+  background: purple;
+  background: url("sprite-map.png") -256px 0;
+}
+
+/* line 365, crystal.scss */
+.crystal-2 {
+  background: purple;
+  background: url("sprite-map.png") -256px -32px;
+}
+
+/* line 369, crystal.scss */
+.crystal-3 {
+  background: purple;
+  background: url("sprite-map.png") -256px -64px;
+}
+
+/* line 373, crystal.scss */
+.crystal-4 {
+  background: purple;
+  background: url("sprite-map.png") -256px -96px;
+}
+
+/* line 379, crystal.scss */
+.door-1 {
+  background: pink;
+  background: url("sprite-map.png") -288px 0;
+}
+
+/* line 383, crystal.scss */
+.door-2 {
+  background: pink;
+  background: url("sprite-map.png") -288px -32px;
+}
+
+/* line 387, crystal.scss */
+.door-3 {
+  background: pink;
+  background: url("sprite-map.png") -288px -64px;
+}
+
+/* line 391, crystal.scss */
+.door-4 {
+  background: pink;
+  background: url("sprite-map.png") -288px -96px;
+}

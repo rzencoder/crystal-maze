@@ -1,0 +1,394 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+$aztec: #F5BE33;
+$future: #518CC7;
+$medieval: #195B1B;
+$industrial: #A258A8;
+$dome: #F8F4EB;
+$map: url("sprite-map.png");
+
+//General Rules
+body {
+  background: #000;
+  text-align: center;
+  font-family: 'VT323', monospace;
+}
+
+h2 {
+  padding: 0.2em 0.2em 0.5em;
+  font-size: 3rem;
+}
+
+button {
+  margin: 0.3em 0 0.6em;
+  padding: 0.1em;
+  background: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: 0.1em solid #000;
+  border-color: inherit;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+//Information Panel
+
+.info {
+  width: 20%;
+  height: 100%;
+  margin: 1em 0.4em;
+  background: #000;
+  color: $aztec;
+  font-size: 2rem;
+  border: 0.2em solid $aztec;
+  border-radius: 0.5em;
+}
+
+.info-2 {
+  color: $future;
+  border-color: $future;
+}
+
+.info-3 {
+  color: $medieval;
+  border-color: $medieval;
+}
+
+.info-4 {
+  color: $industrial;
+  border-color: $industrial;
+}
+
+.info-5 {
+  color: $dome;
+  border-color: $dome;
+}
+
+.log {
+  padding: 0.5em 0.2em;
+}
+
+.hp-good {
+  color: green;
+}
+
+.hp-warn {
+  color: yellow;
+}
+
+.hp-danger {
+  color: red;
+}
+
+//Modal
+
+.modal {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  color: $dome;
+  font-size: 2rem;
+  border: 0.2em solid $dome;
+  border-radius: 0.3em;
+  h3 {
+    padding: 0.3em;
+    font-size: 3rem;
+  }
+}
+
+.defeated {
+  color: red;
+  border-color: red;
+}
+
+//Game
+
+.game {
+  width: 80%;
+  margin: 1em;
+}
+
+.hp-bar {
+  position: relative;
+  top: -4px;
+  left: 1px;
+  width: 30px;
+  height: 5px;
+  background: red;
+}
+
+.hp-life {
+  position: relative;
+  height: 5px;
+  background: green;
+}
+
+.row {
+  line-height: 0px;
+}
+
+.tile {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  @media (max-width: 1300px){
+    height: 1.5em;
+    width: 1.5em;
+  }
+  @media (max-width: 1000px){
+    height: 1em;
+    width: 1em;
+  }
+}
+
+//Walls
+.wall-1 {
+  background: $aztec;
+  background: $map 0 0;
+}
+.wall-2 {
+  background: $future;
+  background: $map 0 -32px;
+}
+.wall-3 {
+  background: $medieval;
+  background: $map 0 -64px;
+}
+.wall-4 {
+  background: $industrial;
+  background: $map 0 -96px;
+}
+.wall-5 {
+  background: $dome;
+  background: $map 0 -128px;
+}
+
+//Floors
+.floor-1 {
+  background: lighten($aztec, 10%);
+  background: $map -32px 0;
+}
+.floor-2 {
+  background: lighten($future, 10%);
+  background: $map -32px -32px;
+
+}
+.floor-3 {
+  background: lighten($medieval, 10%);
+  background: $map -32px -64px;
+}
+.floor-4 {
+  background: lighten($industrial, 10%);
+  background: $map -32px -96px;
+}
+.floor-5 {
+  background: lighten($dome, 10%);;
+  background: $map -32px -128px;
+}
+
+//Players
+.player-1 {
+  @media (max-width: 1300px){
+
+  }
+  background: blue;
+  background: $map -64px 0;
+
+}
+.player-2 {
+  background: blue;
+  background: $map -64px -32px;
+}
+.player-3 {
+  background: blue;
+  background: $map -64px -64px;
+}
+.player-4 {
+  background: blue;
+  background: $map -64px -96px;
+}
+.player-5 {
+  background: blue;
+  background: $map -64px -128px;
+}
+
+//Enemies
+.enemy-1{
+  background: red;
+  background: $map -96px 0;
+}
+.enemy-2 {
+  background: red;
+  background: $map -96px -32px;
+}
+.enemy-3 {
+  background: red;
+  background: $map -96px -64px;
+}
+.enemy-4 {
+  background: red;
+  background: $map -96px -96px;
+}
+.boss {
+  background: red;
+  background: $map -96px -128px;
+}
+//Chests
+.chest-1, .chest-3, .chest-4{
+  background: brown;
+  background: $map -128px 0;
+}
+.chest-2 {
+  background: brown;
+  background: $map -128px -32px;
+}
+
+//Potions
+.hp-1 {
+  background: green;
+  background: $map -160px 0;
+}
+.hp-2 {
+  background: green;
+  background: $map -160px -32px;
+}
+.hp-3 {
+  background: green;
+  background: $map -160px -64px;
+}
+.hp-4 {
+  background: green;
+  background: $map -160px -96px;
+}
+.hp-5 {
+  background: green;
+  background: $map -160px -128px;
+}
+
+//Weapons
+.weapon-1 {
+  background: orange;
+  background: $map -192px 0;
+}
+.weapon-2 {
+  background: orange;
+  background: $map -192px -32px;
+}
+.weapon-3 {
+  background: orange;
+  background: $map -192px -64px;
+}
+.weapon-4 {
+  background: orange;
+  background: $map -192px -96px;
+}
+
+//Armour
+.armour-1 {
+  background: #bbb;
+  background: $map -224px 0;
+}
+.armour-2 {
+  background: #bbb;
+  background: $map -224px -32px;
+}
+.armour-3 {
+  background: #bbb;
+  background: $map -224px -64px;
+}
+.armour-4 {
+  background: #bbb;
+  background: $map -224px -96px;
+}
+
+//Crystals
+.crystal-1 {
+  background: purple;
+  background: $map -256px 0;
+}
+.crystal-2 {
+  background: purple;
+  background: $map -256px -32px;
+}
+.crystal-3 {
+  background: purple;
+  background: $map -256px -64px;
+}
+.crystal-4 {
+  background: purple;
+  background: $map -256px -96px;
+}
+
+//Doors
+.door-1 {
+  background: pink;
+  background: $map -288px 0;
+}
+.door-2 {
+  background: pink;
+  background: $map -288px -32px;
+}
+.door-3 {
+  background: pink;
+  background: $map -288px -64px;
+}
+.door-4 {
+  background: pink;
+  background: $map -288px -96px;
+}
